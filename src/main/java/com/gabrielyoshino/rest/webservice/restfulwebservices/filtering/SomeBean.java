@@ -1,18 +1,20 @@
 package com.gabrielyoshino.rest.webservice.restfulwebservices.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 // Static filtering - Can be done using @JsonIgnore or @JsonIgnoreProperties
 // One of the ways that you can filter fields is by using the @JsonIgnore annotation at the field level.
 // @JsonIgnoreProperties({"field1", "field2"})
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 
     private String field1;
 
     private String field2;
 
-    @JsonIgnore
+    // @JsonIgnore
     private String field3;
 
     public SomeBean(String field1, String field2, String field3) {
